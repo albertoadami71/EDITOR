@@ -1,0 +1,1 @@
+Complete files to run the Shiny application Message Editor in the RStudio. 
