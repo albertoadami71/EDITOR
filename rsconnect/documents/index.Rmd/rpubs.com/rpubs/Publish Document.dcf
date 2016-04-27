@@ -2,6 +2,6 @@ name: Publish Document
 account: rpubs
 server: rpubs.com
 bundleId:
-        https://api.rpubs.com/api/v1/document/136688/33569e24c01b42c49d4ec0e337741068
-url: http://rpubs.com/aadami/136688
-when: 1461551323.16965
+        https://api.rpubs.com/api/v1/document/176148/bf99e47e50c247479dc4304f69528b08
+url: http://rpubs.com/aadami/176148
+when: 1461715298.39278

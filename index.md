@@ -1,0 +1,78 @@
+---
+title       : Message Editor -  Predicting the Next Word 
+subtitle    : 
+author      : Alberto Adami
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Summary
+
+. In this project, we developed a product using the Shiny application that allows the integration of the R software features and the user interaction facilities provided by HTML pages and the JavaScript language;
+
+. The product is a short message editor with the ability to predict the next word to be entered;
+
+. The method was implemented and shared through a Web application. The demo version is available in https://astolfo.shinyapps.io/EDITOR/ and the code can be found at GitHub (https://github.com/albertoadami71/EDITOR.git). 
+
+
+![](figura1.png)
+
+--- .class #id 
+
+## Method
+
+. The model implemented in our product is very simple and is based on analysis of the frequency of a word or two, three or four words sequences in a data set; 
+
+. The data set (corpora) consists of text files containing phrases in English extracted from the web pages: blogs, news and twitters. We did the analysis of the frequency of words in the texts and also verified the occurrences of 2, 3 and 4 words sequences (2-grams, 3-grams and 4-grams);
+
+. The data set size is 265 MB, containing 3 million lines and 40 million words. Below we have samples of frequencies lists of words and sequences of two words.
+
+```
+##   KEY   VALUE
+## 1 the 2941111
+## 2  to 1921469
+## 3 and 1587629
+## 4   a 1572568
+## 5   i 1494765
+## 6  of 1292993
+```
+
+--- .class #id 
+## Method
+
+```
+##       KEY  VALUE
+## 1  of the 257501
+## 2  in the 245543
+## 3 for the 137170
+## 4  to the 135534
+## 5  on the 128928
+## 6   to be 118263
+```
+. The idea is this: suppose we type "do", then the script shows a list of suggestions, "don't; done; doesn't; door; dog; doctor". We choose "don't" and, after that, we type "wo", then the script shows another list: "worry; work", because the sequences "don't worry" and  "don't work" occur frequently in texts. We select "worry" and thus we spend less time and effort to type the phrase "don't worry". As we will see below, we obtained promising results using this strategy;
+
+
+. We applied the algorithm in a text with 1 million words and we found a hit rate of about 80%. We consider a hit when the user type the two first characters, after that the script displays a list of 5 words and one of these 5 suggestions coincides with the next word of the text.
+
+--- .class #id 
+
+## Product Features
+. We provide a text area in which the user will enter his message. When desired, the user can push the button that will allow the display of a list of suggestions for the next word. After selecting one of the suggestions, the selected word will appear in the text area at the cursor position;
+
+. In addition to the predefined lists of words, we have a list that is being fed with the words typed by the user itself. It is a kind of online learning;
+
+. We hope you enjoy our product, we worked hard to do it! Our app works fine and is very fun to use!
+
+![](figura2.png)
+
+--- .class #id 
+##fim
+
+fim
+
+--- .class #id 
